@@ -1,0 +1,5 @@
+[tests_machine]
+test_machine ansible_host=185.241.192.232 ansible_user=ubuntu
+
+[tests_machine:vars]
+ansible_ssh_private_key_file = /home/ubuntu/.ssh/test-machine

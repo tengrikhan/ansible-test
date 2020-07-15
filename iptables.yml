@@ -1,0 +1,27 @@
+---
+
+- name: iptables rules
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: allow
+    iptables:
+     chain: INPUT
+     protocol: tcp
+     action: append
+     source: 95.161.223.147, 62.32.74.242
+     destination_port: 80
+     jump: ACCEPT
+
+
+  - name: drop
+    iptables:
+     chain: INPUT
+     protocol: tcp
+     source: 0.0.0.0/0
+     destination_port: 80
+     jump: DROP
+
+
+
