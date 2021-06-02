@@ -1,0 +1,12 @@
+---
+
+- name: apt-get
+  hosts: all
+  become: yes
+
+  apt:
+  - name: update
+    update: yes
+
+
+
